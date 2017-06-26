@@ -10,6 +10,12 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y git \
  && rm -rf /var/lib/apt/lists/*
 
+# Add files.
+ADD root/.bashrc /root/.bashrc
+ADD root/.gitconfig /root/.gitconfig
+ADD root/.scripts /root/.scripts 
+
+# Set mount floder
 RUN mkdir /root/workspace
 
 # Set environment variables.
