@@ -1,4 +1,4 @@
-FROM ubuntu:trusty-20170626
+FROM ubuntu:trusty-20170602
 
 RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
  && echo 'APT::Install-Suggests 0;' >> /etc/apt/apt.conf.d/01norecommends \
@@ -26,7 +26,7 @@ RUN mkdir /usr/local/include/uci
 # Add root files.
 ADD root/.bashrc /root/.bashrc
 ADD root/.gitconfig /root/.gitconfig
-ADD root/.scripts /root/.scripts 
+ADD root/.scripts /root/.scripts
 
 # Set mount floder
 RUN mkdir /root/workspace
